@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 
-    int x, y, a, b, c;
+    int q, x, y, a, b, c = 0;
 
     cout << "Witaj w moim mini programie, bedziesz mial 7 opcji do wyboru. \nWybierz ktory typ zadania chcesz wykonac, a nastepnie wprowadz zmienne."  << endl;
 
@@ -19,10 +19,17 @@ int main()
     cout << "7 - reszta z dzielenia"                                   <<endl;
 
                                                     cout << " \n \n"   <<endl;
-    cin >> x;
 
 
 
+
+       while(x != 0)
+
+{
+
+        cin >> x;
+
+        if (x == 0) break;
 
         switch (x)
 
@@ -42,6 +49,7 @@ int main()
 
 }
 
+}
     return 0;
 
 }
