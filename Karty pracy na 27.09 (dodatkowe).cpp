@@ -10,7 +10,7 @@ int main()
 
     cout << "Witaj w moim mini programie, bedziesz mial 7 opcji do wyboru. \nWybierz ktory typ zadania chcesz wykonac, a nastepnie wprowadz zmienne."  << endl;
 
-    cout << "1 - suma kwadratów"                                       <<endl;
+    cout << "1 - suma kwadratÃ³w"                                       <<endl;
     cout << "2 - kwadrat sumy"                                         <<endl;
     cout << "3 - roznica szescianu"                                    <<endl;
     cout << "4 - iloczyn 3 zmiennych"                                  <<endl;
