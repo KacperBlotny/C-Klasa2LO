@@ -1,55 +1,37 @@
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
+
 int main()
-
 {
+    int a, b, c, x;
 
-  int  x, a;
-      cout << "Wybierz opcje od 1-5"                                      <<endl;
-        cin  >> a;
+    cout << "\nPodaj wartosc funkcji\n" <<endl;
 
-    while(x != 0)
-
-
+        while(x != 0)
     {
 
-        switch(a)
 
+    if (x<1) cout << 2*x    <<endl;
 
-        {
+     else switch(x)
 
+    {
+        case 1: cout << -10 << "\n" <<endl; break;
 
-    case 1: cin >> x;
-        if(x<1) cout << 2*x                             <<endl;
-                else cout << "Nie ma takiej funkcji"        <<endl; break;
+        case 3: cout << "\n" << 16 /*pow(x-1,4) */ <<endl; break;
 
-    case 2: cin >> x;
-        if(x==1) cout << -10                            <<endl;
-                else cout << "Nie ma takiej funkcji"         <<endl; break;
+        case 6: cout << "\n" << sqrt(2.0) /* sqrt(x-4) */ <<endl; break;
 
-    case 3: cin >> x;
-        if(x==3) cout << pow(x-1,4)                     <<endl;
-                else cout << "Nie ma takiej funkcji"         <<endl; break;
+        default: cout << "\n" << 0 <<endl; break;
 
-    case 4: cin >> x;
-        if(x==6) cout << sqrt(x-4)                      <<endl;
-                else cout << "Nie ma takiej funkcji"         <<endl; break;
-
-    case 5: cin >> x;
-        if(x!=1&&x!=3&&x!=6&&x>1) cout << 0             <<endl;
-                else cout << "Nie ma takiej funkcji"         <<endl; break;
-
-
-    default: cout << "Blad"
-
-
-        }
 
 
     }
 
-
+            cin >> x;
+        }
     return 0;
 }
