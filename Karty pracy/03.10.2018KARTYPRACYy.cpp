@@ -1,108 +1,310 @@
 #include <iostream>
-                                                                    // p - pierwsz      a - radnom
+
 using namespace std;
 
-int pot (int a, int p)
-{
-    int pom = 1;
+//ZADANIE 1
+long double pot(int o, int p);      // 1 potegowanie
+void pelnoletnosc(int u);           // 2 czuy uzytkownik jest pelnletni
+long double fib(int f);             // 3 do ktorego wyrazu chceszz wyswietlic ciag fib
+void parz(int g);                   // 4 sprawdz czy liczba jest parzysta
+bool liczb_pierwsza(int c);         // 5 sprawdz czy liczba jest pierwsza
 
-        for(int i=0; i<p; i++) pom=pom*a;
+//ZADANIE 2
+void n_dzielnik_d(int n, int d);
 
-    return pom;
+//ZADANIE 3
+int suma_cyfr(int a);
 
-}
+//ZADANIE 4
+
+int pierwsza(int j);     //1
+int druga(int k);        //2
+float trzecia(int l);    //3
+
 int main()
 {
-    const int LIMIT=20;
-    int a, b, c, q, p, x, k, s, pom=1;
 
+cout << "Oto karta pracy numer 4 " <<endl;
+cout << "Wybierz do ktorego zadania chcesz przejsc: " <<endl;
 
-    cout << "\nWybierz opcje ktora chcesz sprawdzic\n"                                          <<endl;
+ int x;
 
-    cout << "1 - sprawdz czy liczba jest podzielna przez 3"                                     <<endl;
-    cout << "2 - sprawdz czy liczba jest trzycyfrowa i podzielna przez 17"                      <<endl;
-    cout << "3 - sprawdz czy uzytkownik jest pelnoletni"                                        <<endl;
-    cout << "4 - sprawdz czy ciezarowka moze bezpiecznie przejechac przez most z limitem"       <<endl;
-    cout << "5 - sprwadz czy trzecia podana liczba miesci sie miedzy dwiema pierwszymi"         <<endl;
-    cout << "6 - sprawdz czy pierwsza liczba spelnia twierdzenie Fermata"                       <<endl;
-    cout << "7 - sprawdz czy bajtozabka osiowa pokona wyznaoczny dystans\n\n"                   <<endl;
+while(x != 0)
+{ //poczatek while
 
-        while(x != 0)
-  {
-
-        cin >> x;
-        //if (x == 0) break;
+    cin >> x;
 
     switch(x)
+    {       //poczatek switcha nr1
 
+
+
+
+//________________________________________________________________________________________________________________
+
+    case 1: cout << "ZADANIE 1" <<endl;
+
+        cout << "1 - Potegowanie" <<endl;
+        cout << "2 - Czy uzytkownik jest pelnoletni" <<endl;
+        cout << "3 - Wyswietl ciag Fibonacciego do podanego wyrazu" <<endl;
+        cout << "4 - Sprawdz czy liczba jest parzysta" <<endl;
+        cout << "5 - Sprawdz czy liczba jest pierwsza" <<endl <<endl;
+
+    while(x != 0)
+    { //poczatek while nr2
+
+        int y;
+
+        cin >> y;
+
+        switch(y)
+        { //poczatek switcha nr2
+
+
+
+
+//1
+    case 1: cout << "Podpunkt 1 " <<endl;
+
+int o, p;
+cin >> o >> p;
+cout << pot(o,p);
+
+break;
+
+
+//2
+    case 2: cout << "Podpunkt 2 " <<endl;
+
+
+int u;
+cin >> u;
+pelnoletnosc(u);
+
+break;
+
+//3
+    case 3: cout << "Podpunkt 3 " <<endl;
+
+int f;
+cout << "Podaj do ktorego wyrazu chcesz wyswietlic ciag fibonacciego: ";
+cin >> f;
+cout << fib(f);
+
+break;
+
+
+//4
+    case 4: cout << "Podpunkt 4 " <<endl;
+
+int g;
+cout << "Podaj liczbe by sprawdzic czy jest parzysta: ";
+cin >> g;
+parz(g);
+
+break;
+
+
+//5
+    case 5: cout << "Popunkt 5 " <<endl;
+
+int c;
+cout << "Podaj liczbe by sprawdzic czy jest liczba pierwsza: ";
+cin >> c;
+
+if(liczb_pierwsza(c))
+		cout << "Liczba " << c << " jest pierwsza" <<endl;
+	else
+		cout << "Liczba " << c << " nie jest pierwsza" <<endl;
+
+		break;
+
+    } //koniec switcha nr2
+    } //koniec while nr2
+
+//________________________________________________________________________________________________________________
+
+    case 2: cout << "ZADANIE 2" <<endl;
+
+ // ZADANIE 2
+    int n, d;
+    cout << "Podaj liczbe: ";
+     cin >> n;
+    cout << "Podaj dzielnik ktory chcesz sprawdzic: ";
+     cin >> d;
+    n_dzielnik_d(n,d);
+
+    break;
+
+
+//________________________________________________________________________________________________________________
+
+case 3: cout << "ZADANIE 3" <<endl;
+
+    int a;
+    cin >> a;
+    cout << suma_cyfr(a);
+
+    break;
+
+
+
+//________________________________________________________________________________________________________________
+
+   case 4: cout << "ZADANIE 4" <<endl;
+
+int j;
+cin >> j;
+if(pierwsza(j)%2 == 0) cout << druga(pierwsza(j));
+    else if(pierwsza(j)%2 != 0) cout << trzecia(j);
+
+    break;
+
+
+    }   //koniech switcha nr 1
+} //while
+
+  return 0;
+}
+
+//________________________________________________________________________________________________________________
+//________________________________________________________________________________________________________________
+//________________________________________________________________________________________________________________
+//________________________________________________________________________________________________________________
+
+//________________________________________________________________________________________________________________
+// ZADANIE 1
+
+//1
+
+long double pot(int o, int p)
+{
+    long double pomocnicza = 1;
+    if(p != 0);
+   {
+    for(int i=0; i<p; i++)
     {
-        case 1: cout << "case 1 \n";         cin >> a;
-
-            if (a%3==0) cout << "liczba jest podzielna przez 3 \n"                          <<endl;
-                else cout << "liczba nie jest podzielna przez 3 \n"                         <<endl; break;
-
-
-        case 2: cout << "case 2 \n";         cin >> q;
-
-            if (q>99 && q<1000 && q%17==0) cout << "liczba spelnia warunek \n"              <<endl;
-                else cout << "liczba nie spelnia warunku \n"                                <<endl; break;
-
-
-        case 3: cout << "case 3 \n";         cin >> a;
-
-            if (a>=18) cout << "uzytkownik jest pelnoletni \n"                             <<endl;
-                else cout << "uzytkownik nie jest pelnoletni \n"                           <<endl; break;
-
-
-        case 4: cout << "case 4 \n";         cin >> a;
-
-            if (a <= LIMIT) cout << "ciezarowka spelnia wymogi \n"                          <<endl;
-                else cout << "ciezarowka nie spelnia wymogu \n"                             <<endl; break;
-
-
-        case 5: cout << "case 5 \n";         cin >> a >> b >> c;
-
-            if ((a<c && c<b) || (b<c && c<a)) cout << "tak"                                 <<endl;
-                else cout << "trzecia wpisana liczba nie znajduje sie miedzy 1 a 2"         <<endl; break;
-
-        case 6: cout << "\ncase 6 \n\n";         cin >> p >> a;
-
-
-             if (((pot(a,p))-a) % p == 0)cout << "wpisane liczby spelniaja twierdzenie"    <<endl;                  // 6 10 10
-                else cout << "wpisane liczby nie spelniaja twierdzenia"                    <<endl; break;
-
-
-         case 7: cout << "case 7 \n" << "Podaj punkt p, k na osi oraz dystans skoku zabki czyli s\n"       <<endl;
-                                                cin >> p >> k >> s;
-
-            if ((k-p)/3 <= s) cout << "zabka przejdzie wyznaczony dystans"                 <<endl;
-                else cout << "zabka nie dotarla"                            <<endl; break;
-
-
-
-
-
-
-        default: cout << "ERROR"                                                            <<endl; break;
-
-
-
-
-
-
-
+        pomocnicza = pomocnicza * o;
     }
 
-
-
-
-
    }
-
-
-
-
-
-
-    return 0;
+    return pomocnicza;
 }
+
+//________________________________________________________________________________________________________________
+//2
+
+void pelnoletnosc(int u)
+{
+    if(u>=18) cout << "Uytkownik jest pelnoletni.";
+        else cout << "Uzytkonik nie jest pelnoletni.";
+}
+
+//________________________________________________________________________________________________________________
+//3
+
+long double fib(int f)
+{
+    int p=0, d=1;
+    for(int i=1; i<f; i++)
+            {
+                    p=p+d;
+                    d=p-d;
+                if(d==0) cout << "";
+                    else
+                     cout << d << " ";
+
+            }
+    return d;
+}
+
+
+//________________________________________________________________________________________________________________
+//4
+
+void parz(int g)
+{
+    if(g%2==0) cout << g << " jest liczba parzysta.";
+        else cout << g << " nie jest parzysta.";
+}
+
+//________________________________________________________________________________________________________________
+//5
+
+bool liczb_pierwsza(int c)
+{
+   if(c<2)
+        return false;
+
+   for(int i=2; i*i<=c; i++)
+        if(c%i==0)
+            return false;
+
+    return true;
+}
+
+
+
+//________________________________________________________________________________________________________________
+//________________________________________________________________________________________________________________
+//________________________________________________________________________________________________________________
+// ZADANIE 2
+
+void n_dzielnik_d(int n, int d)
+{
+    if(n%d==0) cout << d << " jest dzielnikiem " << n <<endl;
+        else cout << d <<" nie jest dzielnikiem " << n <<endl;
+}
+
+//________________________________________________________________________________________________________________
+//________________________________________________________________________________________________________________
+//________________________________________________________________________________________________________________
+// ZADANIE 3
+
+int suma_cyfr(int a)
+{
+    int wynik=0;
+
+    do
+    {
+    wynik=wynik+a%10;
+    a=a/10;
+    }
+    while(a!=0);
+
+return wynik;
+}
+
+//________________________________________________________________________________________________________________
+//________________________________________________________________________________________________________________
+//________________________________________________________________________________________________________________
+// ZADANIE 4
+
+
+//1
+
+int pierwsza(int j)
+{
+    if(j%2==0)
+    return j;
+}
+
+//2
+
+int druga(int g)
+{
+    return g=g*3;
+}
+
+//3
+float trzecia(int l)
+{
+    return l*0.4;
+}
+
+
+
+
+
+
+
