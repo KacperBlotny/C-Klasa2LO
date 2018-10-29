@@ -24,8 +24,8 @@ float trzecia(int l);    //3
 int main()
 {
 
-cout << "Oto karta pracy numer 4 " <<endl;
-cout << "Wybierz do ktorego zadania chcesz przejsc: " <<endl;
+cout << "Oto karta pracy numer 4 " <<endl <<endl;
+cout << "Wybierz do ktorego zadania chcesz przejsc: ";
 
  int x;
 
@@ -140,6 +140,9 @@ while(x != 0)
 case 3: cout << "ZADANIE 3" <<endl;
 
     int a;
+
+    cout << "Podaj liczbe a program zsumuje jej cyfry: ";
+
     cin >> a;
     cout << suma_cyfr(a);
 
@@ -152,7 +155,12 @@ case 3: cout << "ZADANIE 3" <<endl;
    case 4: cout << "ZADANIE 4" <<endl;
 
 int j;
+
+cout << "Podaj liczbe by zastosowac ja do polecenia zadania 4: ";
+
 cin >> j;
+
+
 if(pierwsza(j)%2 == 0) cout << druga(pierwsza(j));
     else if(pierwsza(j)%2 != 0) cout << trzecia(j);
 
