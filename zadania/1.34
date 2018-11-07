@@ -1,0 +1,233 @@
+#include<iostream>
+
+using namespace std;
+
+int fa(int n);
+
+int fb(int u);
+
+float fc(float i);
+
+float fd(float o);
+
+int fe(int p);
+
+float ff(float f);
+
+long double fg(int g);
+
+int main()
+{
+    //zad 1.34
+
+    cout << "ZADANIE 1.34" <<endl <<endl;
+    cout << "Wybierz podpunkt: \n 1 = a) \n 2 = b) \n 3 = c) \n 4 = d) \n 5 = e) \n 6 = f) \n 7 = g) \n 8 = h) \n 9 = i) \n 10= j)" <<endl <<endl;
+
+    int x;
+
+    while(x!=0)
+    {//while
+
+        cin >> x;
+
+        switch(x)
+        {//switch
+
+
+    case 1: cout << "Podpunkt a)";
+
+            int a;
+            cin >> a;
+
+            cout << fa(a) <<endl;
+        break;
+
+    case 2: cout << "Podpunkt b)";
+
+            int b;
+            cin >> b;
+
+            cout << fb(b) <<endl;
+        break;
+
+    case 3: cout << "Podpunkt c)";
+
+            int c;
+            cin >> c;
+
+            cout << fc(c) <<endl;
+        break;
+
+    case 4: cout << "Podpunkt d)";
+
+            int d;
+            cin >> d;
+
+            cout << fd(d) <<endl;
+        break;
+
+    case 5: cout << "Podpunkt e)";
+
+            int e;
+            cin >> e;
+
+            cout << fe(e) <<endl;
+        break;
+
+    case 6: cout << "Podpunkt f)";
+
+                int f;
+                cin >> f;
+
+                cout << ff(f) <<endl;
+            break;
+
+    case 7: cout << "Podpunkt g)";
+
+                int g;
+                cin >> g;
+
+                cout << fg(g) <<endl;
+            break;
+
+    case 8: cout << "Podpunkt h)";
+
+                int h;
+                cin >> h;
+
+             //   cout << fh(h) <<endl;
+            break;
+
+    case 9: cout << "Podpunkt i)";
+
+                int i;
+                cin >> i;
+
+               // cout << fi(i) <<endl;
+            break;
+
+    case 10: cout << "Podpunkt j)";
+
+                int j;
+                cin >> j;
+
+              //  cout << fj(j) <<endl;
+            break;
+
+
+
+
+        default: cout <<endl <<endl  << "ERROR" <<endl <<endl;
+
+
+	return 0;
+
+        }//switch
+    } //while
+    return 0;
+}
+
+
+int fa(int n)
+{
+    int w;
+
+    if(n==1) return 1;
+    w = fa(n-1)+3;
+    cout << w << " ";
+    return w;
+}
+
+int fb(int u)
+{
+    int e;
+
+    if(u==1) return 1;
+    e = fb(u-1)*2;
+    cout << e << " ";
+    return e;
+}
+
+float fc(float i)
+{
+    float r;
+
+    if(i==1) return -0.06666667;
+    r = fc(i-1) *3 *(-1);
+    cout << r << " ";
+    return r;
+}
+
+float fd(float o)
+{
+    float t;
+
+    if(o==1) return 20;
+    t = fd(o-1) /2 *(-1);
+    cout << t << " ";
+    return t;
+}
+
+int fe(int p)
+{
+    int y;
+
+    if(p==1) return 4;
+    if(p%2==0) y = fe(p-1) -1;
+    if(p%2!=0) y = fe(p-1) +2;
+    cout << y << " ";
+    return y;
+}
+
+float ff(float f)
+{
+    float g;
+    float m = 0.5;
+
+    if(f==1) return 2;
+    g = ff(f-1) -m;
+    if(f <= 0.5) g = ff(f-1) -(2*m);
+    //else if(f > 1) g = ff(f-1) -m;
+
+
+
+    if(g==0) cout << "";
+    else
+    cout << g << " ";
+    return g;
+
+}
+
+long double fg(int g)
+{
+    int p;
+
+    if(g==1) return -3;
+    p = fg(g-1)*fg(g-2);
+
+    cout << p-1 << " ";
+    return p-1;
+}
+
+
+
+/// -3  1   -4  -5  19  -96 -1825   175199
+
+
+
+
+
+
+
+/*
+/// 1.5    1   0.5    -0.5    -2    -4.5     -8.5    -15
+       -0.5 -0.5    -1    -1,5  -2.5    -4        -6.5
+                        0.5     1     1.5
+
+if(f >= 1) ff(f-1) -0.5;
+
+if(f<=0.5) ff(f-1) -0.5 *2;
+
+*/
+
+
