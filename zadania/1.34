@@ -2,6 +2,8 @@
 
 using namespace std;
 
+int tab[10000];
+
 int fa(int n);
 
 int fb(int u);
@@ -15,6 +17,8 @@ int fe(int p);
 float ff(float f);
 
 long double fg(int g);
+
+int fh(h)
 
 int main()
 {
@@ -87,35 +91,19 @@ int main()
                 int g;
                 cin >> g;
 
-                cout << fg(g) <<endl;
+    for(int i=0; i<g; i++)
+    {
+        tab[i] = 0;
+    }
+
+                fg(g);
             break;
 
-    case 8: cout << "Podpunkt h)";
-
-                int h;
-                cin >> h;
-
-             //   cout << fh(h) <<endl;
-            break;
-
-    case 9: cout << "Podpunkt i)";
-
-                int i;
-                cin >> i;
-
-               // cout << fi(i) <<endl;
-            break;
-
-    case 10: cout << "Podpunkt j)";
-
-                int j;
-                cin >> j;
-
-              //  cout << fj(j) <<endl;
-            break;
-
-
-
+    // h
+    
+    // i
+    
+    // j
 
         default: cout <<endl <<endl  << "ERROR" <<endl <<endl;
 
@@ -186,48 +174,31 @@ float ff(float f)
 
     if(f==1) return 2;
     g = ff(f-1) -m;
-    if(f <= 0.5) g = ff(f-1) -(2*m);
-    //else if(f > 1) g = ff(f-1) -m;
+    
+    ///m = m*2
+    
 
+    if(g==0)cout << "";
+    else cout << g << " ";
 
-
-    if(g==0) cout << "";
-    else
-    cout << g << " ";
     return g;
-
 }
 
 long double fg(int g)
 {
     int p;
 
-    if(g==1) return -3;
-    p = fg(g-1)*fg(g-2);
+    if(g==0) return -3;
+    if(g==1) return 1;
 
-    cout << p-1 << " ";
-    return p-1;
+    if(tab[g]==0)
+    {
+    p = fg(g-1)*fg(g-2) -1;
+    cout << p << " ";
+    tab[g] = p;
+    return p;
+    }
+    else return tab[g];
 }
-
-
-
-/// -3  1   -4  -5  19  -96 -1825   175199
-
-
-
-
-
-
-
-/*
-/// 1.5    1   0.5    -0.5    -2    -4.5     -8.5    -15
-       -0.5 -0.5    -1    -1,5  -2.5    -4        -6.5
-                        0.5     1     1.5
-
-if(f >= 1) ff(f-1) -0.5;
-
-if(f<=0.5) ff(f-1) -0.5 *2;
-
-*/
 
 
