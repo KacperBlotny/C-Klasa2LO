@@ -4,6 +4,8 @@ using namespace std;
 
 int tab[10000];
 
+int tabh[10000];
+
 int fa(int n);
 
 int fb(int u);
@@ -18,7 +20,7 @@ float ff(float f);
 
 long double fg(int g);
 
-int fh(h)
+float fh(int h);
 
 int main()
 {
@@ -99,11 +101,37 @@ int main()
                 fg(g);
             break;
 
-    // h
-    
-    // i
-    
-    // j
+    case 8: cout << "Podpunkt h)";
+
+                int h;
+                cin >> h;
+
+    for(int j=0; j<h; j++)
+    {
+        tab[j] = 0;
+    }
+
+                cout << fh(h) <<endl;
+            break;
+
+    case 9: cout << "Podpunkt i)";
+
+                int i;
+                cin >> i;
+
+               // cout << fi(i) <<endl;
+            break;
+
+    case 10: cout << "Podpunkt j)";
+
+                int j;
+                cin >> j;
+
+              //  cout << fj(j) <<endl;
+            break;
+
+
+
 
         default: cout <<endl <<endl  << "ERROR" <<endl <<endl;
 
@@ -172,15 +200,14 @@ float ff(float f)
     float g;
     float m = 0.5;
 
+
+
     if(f==1) return 2;
     g = ff(f-1) -m;
-    
-    ///m = m*2
-    
 
-    if(g==0)cout << "";
-    else cout << g << " ";
+    if(g>1) m=m*2;
 
+    cout << g << " ";
     return g;
 }
 
@@ -200,5 +227,36 @@ long double fg(int g)
     }
     else return tab[g];
 }
+// -3 1 -4 -5 19 -96 -1825....
+
+float fh(int h)
+{
+    float p;
+
+    if(h==0) return -2;
+    if(h==1) return 2.5;
+    if(h==2) return 3;
+    if(h==3) return -5;
+
+    if(tabh[h]==0)
+    {
+    p = fh(h)*fh(h-2 );
+    cout << p << " ";
+    tabh[h] = p;
+    return p;
+    }
+    else return tabh[h];
+
+}
+
+ //      -5
+// -2   2.5     3      -5      7,5    -4.5    -0.5     8       -12.5
+
+ //    4.5     0.5     8     12.5      12      4      8.5     20.5
+
+
+
+
+
 
 
