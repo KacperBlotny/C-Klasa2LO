@@ -1,0 +1,115 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int tab[30];
+int przypisanie(int x);
+void najwnajm();
+void sr(int x);
+
+int tabnajw[30];
+void domin();
+
+int main()
+{
+    int x, s=0;
+    cout << "Ile losowych liczb wyswietlic?:   ";
+    cin >> x;
+    cout << '\n';
+
+    //random();
+    przypisanie(x);
+    sr(x);
+    najwnajm();
+
+
+  return 0;
+}
+
+int przypisanie(int x)
+{
+    srand(time(NULL));
+    for(int i=0; i<x; i++)
+    {
+        tab[i] = rand()%100+1;
+        cout << tab[i] << " ";
+    }
+        cout << "\n\n\n";
+}
+
+void sr(int x)
+{
+    int sr=0;
+    for(int j=0; j<30; j++)
+    {
+        sr = sr + tab[j];
+    }
+    cout << "\n\n\n Srednia: " << sr/x <<endl <<endl;
+}
+
+void najwnajm()
+{
+    int najw=0, najm=99;
+    for(int i=0; i<30; i++)
+    {
+        if(tab[i] > najw) najw = tab[i];
+        if(tab[i] <= najm) najm = tab[i];
+    }
+    cout << "\n\n\n Najwieksza: " << najw;
+    cout << "\n\n\n Najmniejsza: " << najm;
+}
+
+void domin
+{
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+  mypointer = &firstvalue;
+  *mypointer = 10;
+  mypointer = &secondvalue;
+  *mypointer = 20;
+  cout << "firstvalue is " << firstvalue << '\n';
+  cout << "secondvalue is " << secondvalue << '\n';
+*/
+
+
+
+ /*
+    int n;
+    float x, s = 0;
+    cout << "Podaj liczbe ocen do policzenia sredniej";
+    cin >> n; cout << "\n\n";
+
+    cout << "Podaj " << n << " ocen";
+    for(int i=1; i<=n; i++)
+    {
+        cin >> x;
+        tab[i] = x;
+        s+=tab[i];
+    }
+    cout << s/n;
+    */
+
