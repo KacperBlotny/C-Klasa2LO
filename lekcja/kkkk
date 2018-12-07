@@ -1,0 +1,134 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <stdlib.h>
+
+using namespace std;
+
+int tab[30];
+int przypisanie(int x);
+int sumAVERAGE(int x);
+int najw(int x);
+int najm(int x);
+int sortowanie(int x);
+int domi(int x);
+
+int main()
+{
+    int x;
+    
+    cout << "Ile liczb losowych wyswielic?: ";
+    cin >> x;
+    
+    cout << "\nWylosowane liczby: \n\n";
+    
+    przypisanie(x);
+    sumAVERAGE(x);
+	najm(x);
+	najw(x);
+	sortowanie(x);
+	domi(x);
+	
+    system("PAUSE");
+	return 0;
+}
+
+int przypisanie(int x)
+{
+    srand(time(NULL));
+    for(int i=0; i<x; i++)
+    {
+        tab[i] = rand()%100+1;
+        cout << tab[i] << " ";
+    }
+}
+
+int sumAVERAGE(int x)
+{
+	cout << "\n\nSuma: ";
+	float s=0;
+	for(int i=0; i<x; i++)
+    {
+    	s += tab[i];
+	}
+	cout << s;
+	
+	cout << "\n\nSrednia: " << s/x;
+}
+
+int najw(int x)
+{
+	int najw=0;
+	
+	for(int i=0; i<x; i++)
+    {
+    	if(tab[i] > najw) najw = tab[i];
+	}
+	cout << "\n\nNajwieksza wylosowana liczba: " << najw;
+}
+
+int najm(int x)
+{
+	int najm=101;
+	
+	for(int i=0; i<x; i++)
+    {
+    	if(tab[i] < najm) najm = tab[i];
+    }
+    cout << "\n\nNajmniejsza wylosowana liczba: " << najm;
+}
+
+int sortowanie(int x)
+{
+	cout << "\n\nSortowanie od najmniejszej do najwiekszej: ";
+    int p = 0;
+    for(int i=0; i<x; i++)
+    {
+        for(int j=x-1; j>i; j--)
+        {
+            if(tab[j] < tab[j-1])
+            {
+                p = tab[j-1];
+                tab[j-1] = tab[j];
+                tab[j] = p;
+            }
+        }
+        cout << tab[i] << " ";
+    }
+}
+
+int domi(int x)
+{
+		cout << "\n\n\n\n";
+		
+	
+		  int maks = 0; 
+		  int licz = 0; 
+		  int indeks = 0; 
+		  
+		  for(int i=0; i<x; i++)
+	    {
+	      licz = 0;
+	      
+	      for(int j=i+1; j<x; j++) 
+	        {
+	          if(tab[i] == tab[j])
+	            licz++;
+	        }
+	        
+	      if(licz > maks)
+	        {
+	          maks = licz;
+	          indeks = i;
+	    	}
+	    }
+	  cout << " Dominant wynosi : " << tab[indeks] << endl;
+	  
+			
+}
+
+
+
+
+
+
