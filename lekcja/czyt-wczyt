@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <stdlib.h>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    int x, i=0;
+    int tab[100];
+
+    ifstream in;
+    ofstream out;
+    in.open("liczby.txt");
+    out.open("wynik11.txt");
+
+    
+        while(!in.eof())
+        {
+        in >> x;
+        if(x%11==0) out << x <<endl;
+        }
+
+        
+    in.close();
+    out.close();
+
+
+
+
+
+    system("PAUSE");
+	return 0;
+}
