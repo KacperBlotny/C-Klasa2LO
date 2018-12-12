@@ -1,0 +1,111 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <stdlib.h>
+#include <fstream>
+
+using namespace std;
+
+int domi();
+int tab[4000];
+int los();
+
+int main()
+{
+    ofstream out;
+    ofstream wyn;
+    out.open("baza.txt");
+    wyn.open("wynik1.txt");
+
+
+    los();
+
+    for(int i=0; i<4000; i++)
+    {
+        out << tab[i] <<endl;
+    }
+
+
+    for(int j=0; j<4000; j++)
+    {
+        if(tab[j]%23==0) wyn << tab[j] <<endl;
+    }
+
+    domi();
+
+    out.close();
+    wyn.close();
+
+    system("PAUSE");
+	return 0;
+}
+int los()
+{
+    srand(time(NULL));
+    for(int i=0; i<4000; i++)
+    {
+        tab[i] = rand()%9000+1000;
+    }
+}
+
+int domi()
+{
+    int domi2[10000];
+    int w=0;
+    int maks = 0;
+
+    do
+    {
+        cout << "\n\n\n\n";
+
+        ofstream wyn2;
+        ofstream test;
+        wyn2.open("wynik2.txt");
+        test.open("test.txt");
+
+        int licz = 0;
+        int indeks = 0;
+
+
+            for(int i=0; i<4000; i++)
+            {
+              licz = 0;
+
+              for(int j=i+1; j<4000; j++)
+                {
+                  if(tab[i] == tab[j])
+                    licz++;
+                }
+
+              if(licz > maks)
+                {
+                  maks = licz;
+                  indeks = i;
+                  domi2[i]++;
+                  w++;
+                }
+            }
+              cout << " Dominanta wynosi: " << tab[indeks] << "\n" << maks << endl;
+
+              wyn2 << tab[indeks] <<endl;
+              wyn2 << maks <<endl;
+            
+            for(int k=0; k<4000; k++)
+            {
+            domi2[k] = 0;
+            }
+            
+            for(int n=0; n<4000; n++)
+            {
+            domi2[tab[n]];
+            }
+            
+            
+            
+        wyn2.close();
+        test.close();
+    }
+    while(w>maks);
+
+}
+
