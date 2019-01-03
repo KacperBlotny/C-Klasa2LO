@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <stdlib.h>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ofstream out;
+    out.open("punktynaplaszczyznie.txt");
+
+    srand(time(NULL));
+    for(int i=0; i<1000; i++)
+    {
+        out << rand()%401 << "\t" << rand()%401 <<endl;
+    }
+
+
+    out.close();
+
+
+
+    system("PAUSE");
+	return 0;
+}
+
+
+
+
+
+
