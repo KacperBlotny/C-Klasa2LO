@@ -1,0 +1,54 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <stdlib.h>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ofstream out;
+    out.open("punktynaplaszczyznie.txt");
+
+    srand(time(NULL));
+    for(int i=0; i<1000; i++)
+    {
+        out << rand()%401 << "\t" << rand()%401;
+        if(i<999) out <<endl;
+    }
+
+    out.close();
+
+    ifstream in;
+    in.open("punktynaplaszczyznie.txt");
+
+    int x, y;
+    int w = 0, na = 0, poza = 0;
+
+    while(!in.eof())
+    {
+        in >> x >> y;
+        if((x - 200)*(x - 200) + (y - 200)*(y - 200) < 40000) w++;
+        if((x - 200)*(x - 200) + (y - 200)*(y - 200) == 40000) na++;
+        if((x - 200)*(x - 200) + (y - 200)*(y - 200) > 40000) poza++;
+
+    }
+
+    cout << "W kole sa " << w << "punkty" <<endl <<endl;
+    cout << "Na kole sa " << na << "punkty" <<endl <<endl;
+    cout << "Poza kolem sa " << poza << "punkty" <<endl <<endl;
+
+
+    in.close();
+
+    system("PAUSE");
+	return 0;
+}
+
+/// 200 200 okrag
+/// ile w
+/// ile na
+/// ile poza
+
+
