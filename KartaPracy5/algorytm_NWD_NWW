@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int NWD(int a, int b);
+int r;
+
+int main()
+{
+	int a, b;
+	
+	cout << "Podaj 2 liczby by sprawdzic ich NWD " <<endl;
+	cin >> a >> b;
+	
+	NWD(a,b);
+	cout << "NWW = " << ((a*b) / r);
+	
+	return 0;
+}
+
+int NWD(int a, int b)
+{
+	
+	while(true)
+		{
+			if(a%b == 0) break;
+			r = a%b;
+			a = b;
+			b = r;		
+		}
+	cout << "NWD = " << r <<endl;
+	return r;
+}
