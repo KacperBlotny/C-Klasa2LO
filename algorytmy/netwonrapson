@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <stdlib.h>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    float x, a, b, p;
+    cin >> x;
+    p = x;
+    a = x;
+    b = 1;
+
+    for(int i=0; i<5; i++)
+    {
+        a = (a+b)/2;
+        b = p/a;
+    }
+    cout << b <<endl;
+    cout << a <<endl;
+
+
+	return 0;
+}
