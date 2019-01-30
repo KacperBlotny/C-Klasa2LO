@@ -8,20 +8,20 @@ float pt(float a, float b, float s);
 int main()
 {
 	cout << "BISEKCJA" <<endl <<endl;
-	
+
 	int a;
 	int b;
 	int s;
-	cout << "Podaj przedzial ";
-	
-	//cout << "0 8" <<endl; 
+	cout << "Podaj przedzial <1;9> jak w zadaniu 4. ze spr ";
+
+	//cout << "0 8" <<endl;
 	cin >> a >> b;
-	
-	
+
+
 	s = (a+b)/2;
 	pt(a,b,s);
-	
-	
+
+
 	return 0;
 }
 float pt(float a, float b, float s)
@@ -29,10 +29,10 @@ float pt(float a, float b, float s)
 	float pom;
 	s = ((a+b)/2);
 	cout << "f(a)" << "\t" << "f(b)" << "\t" << "S" << "\t" << "f(s)" << "\t" "a" << "\t" "b" <<endl <<endl;
-	
+
 	for(int i=0; i < 50; i++)
-	{	
-		
+	{
+
 		cout << f(a) << "\t" << f(b) << "\t" << s << "\t" << f(s) << "\t" << a << "\t" << b <<endl;
 		if((f(a))*(f(s)) < 0)
 		{
@@ -43,10 +43,10 @@ float pt(float a, float b, float s)
 		{
 			pom = ((b-a)/2);
 			a = a + pom;
-			
+
 		}
 		s = ((a+b)/2);
-		if(f(s) == 0) 
+		if(f(s) == 0)
 		{
 			pom = i+1;
 			break;
@@ -54,12 +54,11 @@ float pt(float a, float b, float s)
 	}
 	cout << f(a) << "\t" << f(b) << "\t" << s << "\t" << f(s) << "\t" << a << "\t" << b <<endl;
 	cout << "Miejsce zerowe zostalo znalezione po " << pom << " krokach"<<endl;
-	
+
 }
 
 
 float f(float x)
 {
-	//return (4*x) - 15;
-	return (x*x*x) - (x*x) + (2*x) - 12;
+	return (x*x) - (4*x) - 21;
 }
