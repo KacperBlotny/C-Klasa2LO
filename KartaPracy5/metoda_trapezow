@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+int f(int x);
+double oblicz(int a,int b,int dl,int n);
+
+int main()
+{
+	cout << "METODA TRAPEZOW dla zad 1 ze spr" <<endl <<endl;
+    cout << "y = 45 - 3x \t <0;12> \t n = 3" <<endl;
+    cout << "a = 0 \t b = 12 \t dl = 4"<<endl;
+
+    int a = 0, b = 12, dl, n = 3;
+    dl = ((b-a)/n);
+
+    oblicz(a,b,dl,n);
+
+
+	return 0;
+}
+
+double oblicz(int a,int b,int dl,int n)
+{
+    double sumaPol = 0;
+
+    for(int i=1; i<=3; i++)
+    {
+        sumaPol = sumaPol + ((( (f(a+((i-1)*dl))) + (f(a+(i*dl))) )/2)*dl);
+    }
+    cout << "Suma pola trapezow " << sumaPol <<endl;
+}
+
+int f(int x)
+{
+	return 45 - (3*x);
+}
