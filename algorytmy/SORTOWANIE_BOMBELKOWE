@@ -1,0 +1,75 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <stdlib.h>
+#include <fstream>
+
+using namespace std;
+
+int sortowanieNajmDoNajw(int *tab, int n);
+int sortowanieNajwDoNajm(int *tab, int n);
+
+int main()
+{
+    int a;
+    int b;
+    int n;
+    int *tab;
+
+    cout << "Podaj dlugosc ciagu " <<endl;
+    cin >> n;
+    for(int i=0; i<n; i++)
+    {
+        cin >> a;
+        tab[i] = a;
+    }
+    sortowanieNajmDoNajw(tab, n);
+    sortowanieNajwDoNajm(tab, n);
+
+    system("PAUSE");
+	return 0;
+}
+
+
+
+int sortowanieNajmDoNajw(int *tab, int n)
+{
+	cout << "\n\nSortowanie od najmniejszej do najwiekszej: ";
+    int p = 0;
+    for(int i=0; i<n; i++)
+    {
+        for(int j=n-1; j>i; j--)
+        {
+            if(tab[j] < tab[j-1])
+            {
+                p = tab[j-1];
+                tab[j-1] = tab[j];
+                tab[j] = p;
+            }
+        }
+        cout << tab[i] << " ";
+    }
+    cout <<endl <<endl;
+}
+
+int sortowanieNajwDoNajm(int *tab, int n)
+{
+	cout << "\n\nSortowanie od najwiekszej do najmniejszej: ";
+    int p = 0;
+    for(int i=0; i<n; i++)
+    {
+        for(int j=n-1; j>i; j--)
+        {
+            if(tab[j] < tab[j-1])
+            {
+                p = tab[j-1];
+                tab[j-1] = tab[j];
+                tab[j] = p;
+            }
+        }
+    }
+    for(int k=1; k<=n; k++)
+    {
+        cout << tab[n-k] << " ";
+    }
+}
