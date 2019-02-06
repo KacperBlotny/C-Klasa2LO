@@ -1,57 +1,52 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <stdlib.h>
-#include <fstream>
+#include <algorithm>
 
 using namespace std;
 
-int sortowanieNajmDoNajw(int *tab, int n);
-int sortowanieNajwDoNajm(int *tab, int n);
+int sortowanie(int *tab, int n);
 
 int main()
 {
-    int a;
-    int b;
-    int n;
-    int *tab;
+    int *tab, n, a;
 
-    cout << "Podaj dlugosc ciagu " <<endl;
+    cout << "Podaj dlugosc ciagu z przedzialu <1;100>" <<endl;
     cin >> n;
+
+    srand(time(NULL));
     for(int i=0; i<n; i++)
     {
-        cin >> a;
-        tab[i] = a;
+        tab[i] = rand()%100+1;
     }
-    sortowanieNajmDoNajw(tab, n);
-    sortowanieNajwDoNajm(tab, n);
+    sortowanie(tab, n);
 
     system("PAUSE");
 	return 0;
 }
 
-
-
-int sortowanieNajmDoNajw(int *tab, int n)
+int sortowanie(int *tab, int n)
 {
 	cout << "\n\nSortowanie od najmniejszej do najwiekszej: ";
-    int p = 0;
     for(int i=0; i<n; i++)
     {
         for(int j=n-1; j>i; j--)
         {
             if(tab[j] < tab[j-1])
             {
-                p = tab[j-1];
-                tab[j-1] = tab[j];
-                tab[j] = p;
+                swap(tab[j-1],tab[j]);
             }
         }
         cout << tab[i] << " ";
     }
-    cout <<endl <<endl;
-}
 
+    cout << "\n\nSortowanie od najwiekszej do najmniejszej: ";
+    for(int k=1; k<=n; k++)
+    {
+        cout << tab[n-k] << " ";
+    }
+}
+/*
 int sortowanieNajwDoNajm(int *tab, int n)
 {
 	cout << "\n\nSortowanie od najwiekszej do najmniejszej: ";
@@ -62,14 +57,11 @@ int sortowanieNajwDoNajm(int *tab, int n)
         {
             if(tab[j] < tab[j-1])
             {
-                p = tab[j-1];
-                tab[j-1] = tab[j];
-                tab[j] = p;
+                swap(tab[j-1], tab[j]);
             }
         }
     }
-    for(int k=1; k<=n; k++)
-    {
-        cout << tab[n-k] << " ";
-    }
+
+    cout <<endl <<endl;
 }
+*/
