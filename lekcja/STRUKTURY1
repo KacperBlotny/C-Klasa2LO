@@ -1,0 +1,63 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm>
+#include <stdio.h>
+#include <fstream>
+
+using namespace std;
+
+int a;
+
+struct osoba
+{
+    string imie;
+    string nazwisko;
+    int wiek;
+
+};
+
+int main()
+{
+    string im, naz;
+    int w, i=0;
+    osoba uczniowie[5];
+
+    ifstream baza;
+    baza.open("W:/baza/uczniowie.txt");
+    while(!baza.eof())
+    {
+        baza >> im >> naz >> w;
+        uczniowie[i].imie = im;
+        uczniowie[i].nazwisko = naz;
+        uczniowie[i].wiek = w;
+        i++;
+    }
+
+    for(int i=0; i<5; i++)
+    {
+        cout << uczniowie[i].imie << " ";
+        cout << uczniowie[i].nazwisko <<" ";
+        cout << uczniowie[i].wiek <<endl;
+    }
+
+    baza.close();
+
+
+
+    /*
+    osoba uczen;
+
+    uczen.imie = "Kacper";
+    uczen.nazwisko = "Blotny";
+    uczen.wiek = 17;
+
+    cout << uczen.imie << " " << uczen.nazwisko << " " << uczen.wiek;
+
+    int liczby[];
+    osoba uczniowie[];
+    */
+
+
+    return 0;
+}
