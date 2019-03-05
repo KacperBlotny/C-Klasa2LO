@@ -1,0 +1,93 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm>
+#include <stdio.h>
+#include <fstream>
+
+using namespace std;
+
+int a;
+
+struct szkola
+{
+    string szkolanr;
+    string miasto;
+    int ilouczniow;
+    int ilonauczycieli;
+};
+
+int main()
+{
+    string szk, mias;
+    int iloucz, ilonau, i=0;
+    szkola szkoly[10];
+    int RATIO[10];
+    float RATIOWYNIK;
+
+    ifstream baza;
+    baza.open("W:/baza/szkoly.txt");
+    while(!baza.eof())
+    {
+        baza >> szk >> mias >> iloucz >> ilonau;
+        szkoly[i].szkolanr = szk;
+        szkoly[i].miasto = mias;
+        szkoly[i].ilouczniow = iloucz;
+        szkoly[i].ilonauczycieli = ilonau;
+        i++;
+    }
+
+    for(int i=0; i<10; i++)
+    {
+        cout << szkoly[i].szkolanr <<" ";
+        cout << szkoly[i].miasto <<" ";
+        cout << szkoly[i].ilouczniow <<" ";
+        cout << szkoly[i].ilonauczycieli <<endl;
+    }
+
+    for(int j=0; j<10; j++)
+    {
+        RATIO[j] = (szkoly[j].ilouczniow)/(szkoly[j].ilonauczycieli);
+    }
+
+    for(int o=0; o<10; o++)
+    {
+        if(RATIO[0] < RATIO[o])
+        {
+           RATIO[0] = RATIO[o];
+        }
+    }
+    RATIOWYNIK = RATIO[0];
+    for(int k=0; k<10; k++)
+    {
+        if(RATIOWYNIK == RATIO[k])
+        {
+            //RATIO[k] = RATIOWYNIK;
+            cout << szkoly[k].szkolanr <<" ";
+            cout << szkoly[k].miasto <<" ";
+            cout << szkoly[k].ilouczniow <<" ";
+            cout << szkoly[k].ilonauczycieli <<endl; break;
+        }
+    }
+
+
+    baza.close();
+
+
+
+    /*
+    osoba uczen;
+
+    uczen.imie = "Kacper";
+    uczen.nazwisko = "Blotny";
+    uczen.wiek = 17;
+
+    cout << uczen.imie << " " << uczen.nazwisko << " " << uczen.wiek;
+
+    int liczby[];
+    osoba uczniowie[];
+    */
+
+
+    return 0;
+}
