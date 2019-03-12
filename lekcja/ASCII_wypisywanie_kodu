@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+//substr(), size()
+
+int main()
+{
+    string napis;
+    cin >> napis;
+
+    for(int i=0; i<napis.size(); i++)
+    {
+        cout << (int)napis[i] <<endl;
+    }
+
+
+
+    return 0;
+}
