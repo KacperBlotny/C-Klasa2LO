@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+//substr(), size()
+
+int main()
+{
+    string napis;
+    bool flaga = false;
+    getline(cin, napis);
+    int s = napis.size();
+
+    for(int i=0; i<s/2; i++)
+    {
+        if(napis[i] == napis[s-i-1])
+            {
+                flaga = true;
+            }
+    }
+
+
+    if(flaga)
+        {
+            cout << "jest";
+        }
+        else cout << "nie jest";
+
+
+
+
+
+    return 0;
+}
