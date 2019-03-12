@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+//substr(), size()
+
+int main()
+{
+    char A = 'a';
+    int licz = 0;
+
+    string napis;
+    getline(cin, napis);
+
+    for(int i=0; i<napis.size(); i++)
+    {
+        if((int)napis[i] == (int)A) licz++;
+    }
+    cout << licz;
+
+    return 0;
+}
