@@ -1,0 +1,98 @@
+#include<iostream>
+using namespace std;
+
+void szyfruj(string tekst, int x);
+void rozszyfruj(string szyfr);
+
+int main()
+{
+int y;
+cout << "1. Zaszyfruj zdanie/slowo\t" << "2. Odszyfruj zdanie/slowo\t\t";
+cin >> y;
+	
+	if(y == 1)
+	{
+		string tekst;
+		
+		cout << "podaj tekst do zaszyfrowania"<<endl;
+		getline(cin, tekst);
+		
+		int x;
+		
+		cout << "podaj wspolczynnik przesuniecia"<<endl;
+		cin >> x;
+		
+		szyfruj(tekst, x);
+	}
+
+	else if(y == 2)
+	{
+		string szyfr;
+		cout << "Podaj tekst do rozszyfrowania" <<endl;
+		getline(cin, szyfr);
+		rozszyfruj(szyfr);
+	}
+	
+	else
+	{
+		cout << "Nie ma takiej opcji :(" <<endl;
+		main();
+	}
+	
+return 0;
+}
+
+void rozszyfruj(string szyfr)
+{
+	string ODSZYF = szyfr;
+	
+	for(int klucz = 1; klucz<26; klucz++)
+	{
+	    for (int i = 0; i <	szyfr.size(); i++)
+		{
+	        if(szyfr[i]==32)
+			{
+	            continue; //ignoruje spacje, nr ascii dla spacji = 32
+	        } 
+			else 
+			{
+	            if((szyfr[i] - klucz) < 97 && (szyfr[i] - klucz) > 90)
+				{
+	                int temp = (szyfr[i] - klucz) + 26;
+	                ODSZYF[i] = temp;
+	            } 
+	            
+				else if((szyfr[i] - klucz) < 65)
+				{
+	                int temp = (szyfr[i] - klucz) + 26;
+	                ODSZYF[i] = temp;
+	            } 
+	            
+				else 
+				{
+	                ODSZYF[i] = szyfr[i] - klucz;
+	            }
+	        }
+	    }
+	    cout << "SZYFR DLA  " << klucz << "\t" << ODSZYF <<endl;
+	}	
+
+
+}
+
+
+
+void szyfruj(string tekst, int x)
+{
+    for(int i=0; i<=tekst.length(); i++)
+    {
+        if(tekst[i]>=65 && tekst[i]<=90-x) tekst[i]=int(tekst[i])+x;
+        
+            else if(tekst[i]>=91-x && tekst[i]<=90) tekst[i]=int(tekst[i])-26+x;
+            
+                else if(tekst[i]>=97 && tekst[i]<=122-x) tekst[i]=int(tekst[i])+x;
+                
+                    else if(tekst[i]>=123-x && tekst[i]<=122) tekst[i]=int(tekst[i])-26+x;
+    }
+    cout << tekst;
+}
