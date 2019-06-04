@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <stdlib.h>
+#include <fstream>
+
+using namespace std;
+
+int sumaDzilenikow(int n);
+int doskonala(int x);
+
+int main()
+{
+    int x;
+    cin >> x;
+    doskonala(x);
+
+
+return 0;
+}
+
+int sumaDzilenikow(int n)
+{
+    int suma = 0;
+    for(int i=1;i<=n/2;i++)
+    {
+        if(n%i==0)
+        {
+            suma += i;
+        }
+    }
+
+    return suma;
+}
+
+int doskonala(int x)
+{
+    for(int i=1;i<x;i++)
+    {
+        if(sumaDzilenikow(i) == i)
+        {
+            cout << i << " ";
+        }
+    }
+
+}
+
