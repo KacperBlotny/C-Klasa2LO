@@ -1,0 +1,63 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int silnia(int n);
+
+int main()
+{
+    int linia;
+    int a=0;
+    int tab[500];
+
+    ifstream we;
+    we.open("liczby.txt");
+    while(!we.eof())
+    {
+        we >> linia;
+        tab[a] = linia;
+        a++;
+        //cout << linia <<endl;
+
+    }
+/*
+    for(int i=0; i<500;i++)
+    {
+        cout << tab[i] <<endl;
+    }
+*/
+    int cyfra;
+    int liczba;
+    int suma = 0;
+
+    for(int i=0; i<500; i++)
+    {
+        liczba = tab[i];
+
+        while(liczba>0)
+        {
+            cyfra=liczba%10;
+            liczba = liczba/10;
+            suma += silnia(cyfra);
+        }
+
+        if(tab[i]==suma)
+        {
+            cout << tab[i] <<endl;
+        }
+        suma=0;
+    }
+
+
+
+    we.close();
+
+    return 0;
+}
+
+int silnia(int n)
+{
+    if(n<=1) return 1;
+    return silnia(n-1)*n;
+}
